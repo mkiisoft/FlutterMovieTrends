@@ -9,7 +9,7 @@ import 'movie.dart';
 import 'video.dart';
 
 class MovieNetwork {
-  final apiKey = 'c7de35552aca985509f86e76f594c9f1';
+  final apiKey = 'YOUR-API-KEY';
 
   State<StatefulWidget> _screenState;
 
