@@ -7,6 +7,10 @@ Movie Trends it's an example using Flutter for Android and iOS.
 _______________
 
 - First Version v1.0
+- Under lib/network.dart change:
+
+ * final apiKey = 'YOUR-API-KEY'; // Your actual Api Key
+ * https://www.themoviedb.org/documentation/api
 
 # Features
 _______________
