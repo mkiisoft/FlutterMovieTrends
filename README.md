@@ -15,11 +15,14 @@ _______________
 # Features
 _______________
 
+* Firebase
+* Login Screen
 * Grid and List views
 * Nested Scroll views
 * TheMovie Db API
 * MVC architecture
 * Async tasks
+* Custom Views
 * Utils / Date formats
 * Intent Uri launcher
 
