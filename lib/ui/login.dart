@@ -228,11 +228,6 @@ class LoginState extends State<LoginPage> {
 
   Widget getEmailForm() {
     return Container(
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-        color: Colors.white,
-      ))),
       margin: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
       child: Material(
         color: Colors.transparent,
@@ -258,13 +253,7 @@ class LoginState extends State<LoginPage> {
 
   Widget getPasswordForm() {
     return Container(
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: Colors.white,
-          ),
-        ),
-      ),
+
       margin: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
       child: Material(
         color: Colors.transparent,
@@ -279,6 +268,11 @@ class LoginState extends State<LoginPage> {
             labelText: 'Password',
             labelStyle: TextStyle(
               color: Colors.white70,
+            ),
+            border: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.white,
+              )
             ),
             contentPadding:
                 EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),

@@ -65,6 +65,7 @@ class AppHome extends StatelessWidget {
       title: 'Movie Trends',
       home: LoginPage(),
       theme: ThemeData(
+        hintColor: Colors.white,
         primaryColor: Colors.black,
       ),
     );
