@@ -32,20 +32,23 @@ class HomeState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Movie Trends'),
       ),
-      body: Container(
-        color: Colors.black,
-        child: GridView.count(
-          crossAxisCount: 2,
-          childAspectRatio: (width / height),
-          scrollDirection: Axis.vertical,
-          children: GridAdapter(
-            context: context,
-            state: this,
-            network: _network,
-            gridListener: (GridNavigator navigator) {
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Container(
+          color: Colors.black,
+          child: GridView.count(
+            crossAxisCount: 2,
+            childAspectRatio: (width / height),
+            scrollDirection: Axis.vertical,
+            children: GridAdapter(
+              context: context,
+              state: this,
+              network: _network,
+              gridListener: (GridNavigator navigator) {
 
-            }
-          ).movieItems(),
+              }
+            ).movieItems(),
+          ),
         ),
       ),
     );

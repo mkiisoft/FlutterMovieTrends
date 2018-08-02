@@ -50,12 +50,14 @@ class DetailState extends State<DetailPage> {
               bottom: 5.0,
               left: 15.0,
             ),
-            child: Text(
-              'Videos:',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.w700,
+            child: SafeArea(
+              child: Text(
+                'Videos:',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ),
@@ -135,91 +137,95 @@ class DetailState extends State<DetailPage> {
                               ),
                             ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.only(
-                                  top: 70.0,
-                                  left: 15.0,
-                                  right: 15.0,
-                                ),
-                                color: Colors.black,
-                                child: Text(
-                                  _movie.title,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 25.0,
-                                    fontWeight: FontWeight.w900,
+                          SafeArea(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: <Widget>[
+                                Container(
+                                  padding: EdgeInsets.only(
+                                    top: 70.0,
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  color: Colors.black,
+                                  child: Text(
+                                    _movie.title,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 25.0,
+                                      fontWeight: FontWeight.w900,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                color: Colors.black,
-                                padding: EdgeInsets.only(
-                                  top: 5.0,
-                                  bottom: 20.0,
-                                  left: 15.0,
-                                  right: 15.0,
-                                ),
-                                child: Text(
-                                  'Release date: ${time.month}/${time.day}/${time
-                                      .year}',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14.0,
+                                Container(
+                                  color: Colors.black,
+                                  padding: EdgeInsets.only(
+                                    top: 5.0,
+                                    bottom: 20.0,
+                                    left: 15.0,
+                                    right: 15.0,
+                                  ),
+                                  child: Text(
+                                    'Release date: ${time.month}/${time.day}/${time
+                                        .year}',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14.0,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                color: Colors.black,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 5.0,
-                                  horizontal: 15.0,
-                                ),
-                                child: Text(
-                                  'Overview:',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w700,
+                                Container(
+                                  color: Colors.black,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 5.0,
+                                    horizontal: 15.0,
+                                  ),
+                                  child: Text(
+                                    'Overview:',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w700,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                color: Colors.black,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: 10.0,
-                                  horizontal: 15.0,
-                                ),
-                                child: Text(
-                                  _movie.overview,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16.0,
+                                Container(
+                                  color: Colors.black,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 10.0,
+                                    horizontal: 15.0,
                                   ),
-                                ),
-                              )
-                            ], // (TITLE > RELEASE DATE > OVERVIEW) = DETAILS
+                                  child: Text(
+                                    _movie.overview,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                )
+                              ], // (TITLE > RELEASE DATE > OVERVIEW) = DETAILS
+                            ),
                           ),
                           videoContainer()
                         ], // BACK POSTER > DETAILS > LIST VIEW
                       ),
-                      Container(
-                        margin: EdgeInsets.only(
-                          top: 70.0,
-                          left: 15.0,
-                        ),
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                          color: Colors.white,
-                          width: 4.0,
-                        )),
-                        width: 120.0,
-                        height: 180.0,
-                        child: Image.network(
-                          "http://image.tmdb.org/t/p/w500${_movie.poster_path}",
-                          fit: BoxFit.cover,
+                      SafeArea(
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            top: 70.0,
+                            left: 15.0,
+                          ),
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                            color: Colors.white,
+                            width: 4.0,
+                          )),
+                          width: 120.0,
+                          height: 180.0,
+                          child: Image.network(
+                            "http://image.tmdb.org/t/p/w500${_movie.poster_path}",
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       )
                     ], // BACK DETAILS > THUMBNAIL POSTER

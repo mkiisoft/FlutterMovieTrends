@@ -21,6 +21,8 @@ class LoginState extends State<LoginPage> {
 
   final formKey = new GlobalKey<FormState>();
 
+  MediaQueryData mediaQuery;
+
   bool _validateFields() {
     final form = formKey.currentState;
     if (form.validate()) {
@@ -32,7 +34,6 @@ class LoginState extends State<LoginPage> {
   }
 
   String _validateEmail(String value) {
-
     if (value.isEmpty) {
       setState(() {
         _inAsync = false;
@@ -49,7 +50,6 @@ class LoginState extends State<LoginPage> {
   }
 
   String _validatePassword(String value) {
-
     if (value.isEmpty) {
       setState(() {
         _inAsync = false;
@@ -120,16 +120,26 @@ class LoginState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    Utils.checkLoginState(context);
-    return Stack(
-      children: <Widget>[
-        getBackground(),
-        getTitle(),
-        ProgressDialog(
-          child: getLoginForm(),
-          inAsync: _inAsync,
-        ),
-      ],
+//    Utils.checkLoginState(context);
+    mediaQuery = MediaQuery.of(context);
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).requestFocus(FocusNode());
+      },
+      child: Stack(
+        children: <Widget>[
+          getBackground(),
+          SafeArea(
+            child: getTitle(),
+          ),
+          ProgressDialog(
+            child: SafeArea(
+              child: getLoginForm(),
+            ),
+            inAsync: _inAsync,
+          ),
+        ],
+      ),
     );
   }
 
@@ -143,7 +153,7 @@ class LoginState extends State<LoginPage> {
             opacity: 0.2,
             child: Image.asset(
               "assets/movie_bg.png",
-              fit: BoxFit.fitHeight,
+              fit: BoxFit.cover,
             ),
           ),
         ],
@@ -158,7 +168,7 @@ class LoginState extends State<LoginPage> {
       children: <Widget>[
         Container(
           alignment: Alignment.topLeft,
-          margin: EdgeInsets.only(top: 50.0, left: 20.0),
+          margin: EdgeInsets.only(top: 20.0, left: 20.0),
           child: Material(
             color: Colors.transparent,
             child: Opacity(
@@ -183,12 +193,16 @@ class LoginState extends State<LoginPage> {
       children: <Widget>[
         Form(
           key: formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              getEmailForm(),
-              getPasswordForm(),
-            ],
+          child: AnimatedContainer(
+            padding: mediaQuery.orientation == Orientation.portrait ? mediaQuery.viewInsets : null,
+            duration: const Duration(microseconds: 200),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                getEmailForm(),
+                getPasswordForm(),
+              ],
+            ),
           ),
         ),
         getLoginButton(),
