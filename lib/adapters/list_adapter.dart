@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import 'network.dart';
-
-import 'video.dart';
-import 'videocell.dart';
-
-import 'detail.dart';
+part of app_movie;
 
 class ListAdapter {
   State<DetailPage> _detailState;

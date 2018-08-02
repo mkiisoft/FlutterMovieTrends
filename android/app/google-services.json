@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "285528187763",
+    "firebase_url": "https://movietrends-43ab8.firebaseio.com",
+    "project_id": "movietrends-43ab8",
+    "storage_bucket": "movietrends-43ab8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285528187763:android:e596b56c56b15f6a",
+        "android_client_info": {
+          "package_name": "com.mkiisoft.flutterapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285528187763-h88ocv2i35i1l9d8gjtj1i4e1li0j18r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mkiisoft.flutterapp",
+            "certificate_hash": "184dd2741c53a57ca34d1d88e95f24aa0ebcd8a0"
+          }
+        },
+        {
+          "client_id": "285528187763-q611tf1g5a83p0nhs9pjc6p5pgfaeoos.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr4lfqQd0D79KeaiSWrA8ss9xNzmJQbXE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285528187763-q611tf1g5a83p0nhs9pjc6p5pgfaeoos.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

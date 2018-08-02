@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'movie.dart';
+part of app_movie;
 
 class ItemCell extends StatelessWidget {
   final Movie _movie;
@@ -11,9 +9,15 @@ class ItemCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Image.network(
-          "http://image.tmdb.org/t/p/w342${_movie.poster_path}",
-          fit: BoxFit.cover,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Image.network(
+              "http://image.tmdb.org/t/p/w342${_movie.poster_path}",
+              fit: BoxFit.cover,
+            ),
+          ],
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,

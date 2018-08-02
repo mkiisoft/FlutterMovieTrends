@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'listadapter.dart';
-
-import 'movie.dart';
-import 'network.dart';
-
-import 'utils.dart';
+part of app_movie;
 
 class Detail extends StatelessWidget {
   final Movie _movie;
@@ -61,7 +54,7 @@ class DetailState extends State<DetailPage> {
               'Videos:',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18.0,
+                fontSize: 20.0,
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -188,7 +181,7 @@ class DetailState extends State<DetailPage> {
                                   'Overview:',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 18.0,
+                                    fontSize: 20.0,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),

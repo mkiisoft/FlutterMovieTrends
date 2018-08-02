@@ -1,15 +1,7 @@
-import 'package:flutter/material.dart';
-
-import 'package:http/http.dart' as http;
-
-import 'dart:async';
-import 'dart:convert';
-
-import 'movie.dart';
-import 'video.dart';
+part of app_movie;
 
 class MovieNetwork {
-  final apiKey = 'YOUR-API-KEY';
+  final apiKey = 'c7de35552aca985509f86e76f594c9f1';
 
   State<StatefulWidget> _screenState;
 
@@ -29,7 +21,7 @@ class MovieNetwork {
       if (response.statusCode == 200) {
         Map result = json.decode(response.body);
         movies = _getListOfMovies(result['results']);
-        print(movies);
+//        print(movies);
       } else {
         movies = List<Movie>();
       }
@@ -46,7 +38,7 @@ class MovieNetwork {
       if (response.statusCode == 200) {
         Map result = json.decode(response.body);
         videos = _getListOfVideos(result['results']);
-        print(videos);
+//        print(videos);
       } else {
         videos = List<Video>();
       }

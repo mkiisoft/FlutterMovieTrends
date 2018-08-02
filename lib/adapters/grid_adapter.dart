@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'network.dart';
-
-import 'home.dart';
-
-import 'movie.dart';
-import 'itemcell.dart';
-
-import 'gridnavigator.dart';
+part of app_movie;
 
 typedef void GridClickListener(GridNavigator navigator);
 

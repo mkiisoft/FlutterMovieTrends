@@ -1,3 +1,5 @@
+part of app_movie;
+
 class Video {
   final String id;
   final String key;

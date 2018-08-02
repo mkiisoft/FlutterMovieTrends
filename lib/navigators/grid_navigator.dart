@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'movie.dart';
-import 'detail.dart';
+part of app_movie;
 
 class GridNavigator {
   GridNavigator({Key key, BuildContext context, Movie movie}) {
@@ -8,9 +6,6 @@ class GridNavigator {
   }
 
   void _navigate(BuildContext context, Movie movie) {
-
-
-
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => Detail(movie)),

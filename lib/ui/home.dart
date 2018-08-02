@@ -1,24 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'network.dart';
-import 'gridadapter.dart';
-import 'gridnavigator.dart';
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Movie Trends',
-      home: HomePage(title: 'Movie Trends'),
-      theme: ThemeData(
-          primaryColor: Colors.black,
-          textTheme: TextTheme(
-              title: TextStyle(
-            color: Colors.white,
-          ))),
-    );
-  }
-}
+part of app_movie;
 
 class HomePage extends StatefulWidget {
   final String title;

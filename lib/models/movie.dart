@@ -1,3 +1,5 @@
+part of app_movie;
+
 class Movie {
   final int vote_count;
   final int id;

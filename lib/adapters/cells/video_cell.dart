@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'video.dart';
+part of app_movie;
 
 class VideoCell extends StatelessWidget {
   final Video _video;
