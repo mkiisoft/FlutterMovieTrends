@@ -24,8 +24,9 @@ class HomeState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    var portrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
-    final double width = size.width / 2;
+    final double width = portrait ? size.width / 2 : size.width / 4;
     final double height = width * 1.5;
 
     return Scaffold(
@@ -37,7 +38,7 @@ class HomeState extends State<HomePage> {
         child: Container(
           color: Colors.black,
           child: GridView.count(
-            crossAxisCount: 2,
+            crossAxisCount: portrait ? 2 : 4,
             childAspectRatio: (width / height),
             scrollDirection: Axis.vertical,
             children: GridAdapter(

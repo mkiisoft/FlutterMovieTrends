@@ -139,7 +139,6 @@ class LoginState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-
 //    Utils.checkLoginState(context);
   }
 
