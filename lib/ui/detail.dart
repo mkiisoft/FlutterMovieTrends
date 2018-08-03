@@ -83,11 +83,11 @@ class DetailState extends State<DetailPage> {
 
   @override
   void initState() {
-    super.initState();
+    _scrollController = ScrollController();
+
     _network = MovieNetwork(this);
     _network.movieVideos(_movie.id);
-
-    _scrollController = ScrollController();
+    super.initState();
   }
 
   @override

@@ -12,13 +12,45 @@ class HomePage extends StatefulWidget {
 }
 
 class HomeState extends State<HomePage> {
+  // Scroll listener
+  ScrollController _controller;
+  // Network Request
   MovieNetwork _network;
+  // Pagination
+  int _currentPage = 1;
+  // Async check
+  bool _inAsync = true;
 
   @override
   void initState() {
-    super.initState();
+    _controller = new ScrollController()..addListener(_scrollListener);
     _network = MovieNetwork(this);
-    _network.fetchMovies();
+    _network.fetchMovies(_currentPage, () {
+      setState(() {
+        _inAsync = false;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.removeListener(_scrollListener);
+    super.dispose();
+  }
+
+  void _scrollListener() {
+    if (_controller.position.extentAfter <= 0.0 && !_inAsync) {
+      setState(() {
+        _inAsync = true;
+        _currentPage++;
+      });
+      _network.fetchMovies(_currentPage, () {
+        setState(() {
+          _inAsync = false;
+        });
+      });
+    }
   }
 
   @override
@@ -35,20 +67,21 @@ class HomeState extends State<HomePage> {
       ),
       backgroundColor: Colors.black,
       body: SafeArea(
-        child: Container(
-          color: Colors.black,
-          child: GridView.count(
-            crossAxisCount: portrait ? 2 : 4,
-            childAspectRatio: (width / height),
-            scrollDirection: Axis.vertical,
-            children: GridAdapter(
-              context: context,
-              state: this,
-              network: _network,
-              gridListener: (GridNavigator navigator) {
-
-              }
-            ).movieItems(),
+        child: ProgressDialog(
+          inAsync: _inAsync,
+          child: Container(
+            color: Colors.black,
+            child: GridView.count(
+              controller: _controller,
+              crossAxisCount: portrait ? 2 : 4,
+              childAspectRatio: (width / height),
+              scrollDirection: Axis.vertical,
+              children: GridAdapter(
+                      context: context,
+                      state: this,
+                      network: _network)
+                  .movieItems(),
+            ),
           ),
         ),
       ),

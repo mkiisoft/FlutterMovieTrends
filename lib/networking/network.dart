@@ -1,6 +1,9 @@
 part of app_movie;
 
+typedef void NetworkListener();
+
 class MovieNetwork {
+  NetworkListener _listener;
 
   State<StatefulWidget> _screenState;
 
@@ -13,37 +16,40 @@ class MovieNetwork {
     _screenState = state;
   }
 
-  Future<List<Movie>> fetchMovies() async {
-    final apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=$movieApiKey';
-    final response = await http.get(apiUrl);
-
-    // ignore: invalid_use_of_protected_member
-    _screenState.setState(() {
-      if (response.statusCode == 200) {
-        Map result = json.decode(response.body);
-        movies = _getListOfMovies(result['results']);
-//        print(movies);
-      } else {
-        movies = List<Movie>();
-      }
-    });
+  Future<List<Movie>> fetchMovies(int page, NetworkListener listener) async {
+    _listener = listener;
+    final apiUrl =
+        'https://api.themoviedb.org/3/movie/popular?api_key=$movieApiKey&page=$page';
+    final response = await http.get(apiUrl); {
+      // ignore: invalid_use_of_protected_member
+      _screenState.setState(() {
+        if (response.statusCode == 200) {
+          Map result = json.decode(response.body);
+          movies.addAll(_getListOfMovies(result['results']));
+          _listener();
+        } else {
+          movies = List<Movie>();
+        }
+      });
+    }
     return movies;
   }
 
   Future<List<Video>> movieVideos(int id) async {
-    final apiUrl = 'https://api.themoviedb.org/3/movie/$id/videos?api_key=$movieApiKey';
-    final response = await http.get(apiUrl);
+    final apiUrl =
+        'https://api.themoviedb.org/3/movie/$id/videos?api_key=$movieApiKey';
+    final response = await http.get(apiUrl); {
+      // ignore: invalid_use_of_protected_member
+      _screenState.setState(() {
+        if (response.statusCode == 200) {
+          Map result = json.decode(response.body);
+          videos = _getListOfVideos(result['results']);
+        } else {
+          videos = List<Video>();
+        }
+      });
+    }
 
-    // ignore: invalid_use_of_protected_member
-    _screenState.setState(() {
-      if (response.statusCode == 200) {
-        Map result = json.decode(response.body);
-        videos = _getListOfVideos(result['results']);
-//        print(videos);
-      } else {
-        videos = List<Video>();
-      }
-    });
     return videos;
   }
 

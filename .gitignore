@@ -11,3 +11,14 @@ pubspec.lock
 # Directory created by dartdoc
 # If you don't generate documentation locally you can remove this line.
 doc/api/
+
+# Signing key
+android/app/mkiisoft.keystore
+android/key.properties
+
+# Keys
+lib/utils/keys.dart
+
+# Firebase
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist

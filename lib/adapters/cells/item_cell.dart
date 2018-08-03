@@ -10,7 +10,7 @@ class ItemCell extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Image.network(
