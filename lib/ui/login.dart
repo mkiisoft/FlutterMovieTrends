@@ -65,7 +65,25 @@ class LoginState extends State<LoginPage> {
     return null;
   }
 
-  void _validateSubmit(BuildContext context) async {
+  void _signInAnonymously() async {
+    setState(() {
+      _inAsync = true;
+    });
+    try {
+      FirebaseUser user = await FirebaseAuth.instance.signInAnonymously(); {
+        SharedPreferences prefs = await SharedPreferences.getInstance(); {
+          prefs.setString("uid", user.uid);
+          LoginNavigator(context: context);
+        }
+      }
+    } catch(exception) {
+      setState(() {
+        _inAsync = false;
+      });
+    }
+  }
+
+  void _validateSubmit() async {
     setState(() {
       _inAsync = true;
       _validEmail = true;
@@ -119,8 +137,14 @@ class LoginState extends State<LoginPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+
 //    Utils.checkLoginState(context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     mediaQuery = MediaQuery.of(context);
     return GestureDetector(
       onTap: () {
@@ -201,12 +225,39 @@ class LoginState extends State<LoginPage> {
               children: <Widget>[
                 getEmailForm(),
                 getPasswordForm(),
+                getLoginAnonymously(),
               ],
             ),
           ),
         ),
         getLoginButton(),
       ],
+    );
+  }
+
+  Widget getLoginAnonymously() {
+    return GestureDetector(
+      onTap: () {
+        _signInAnonymously();
+      },
+      child: Container(
+        height: 40.0,
+        margin: EdgeInsets.symmetric(vertical: 5.0),
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            child: Center(
+              child: Text(
+                "ACCESS WITHOUT ACCOUNT",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 12.0,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -219,7 +270,7 @@ class LoginState extends State<LoginPage> {
           text: "LOGIN",
           color: Colors.redAccent,
           onTap: () {
-            _validateSubmit(context);
+            _validateSubmit();
           },
         ),
       ),

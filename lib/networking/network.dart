@@ -1,19 +1,20 @@
 part of app_movie;
 
 class MovieNetwork {
-  final apiKey = 'c7de35552aca985509f86e76f594c9f1';
 
   State<StatefulWidget> _screenState;
 
   List<Movie> movies = List<Movie>();
   List<Video> videos = List<Video>();
 
+  String movieApiKey = Keys.apiKey;
+
   MovieNetwork(State<StatefulWidget> state) {
     _screenState = state;
   }
 
   Future<List<Movie>> fetchMovies() async {
-    final apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=$apiKey';
+    final apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=$movieApiKey';
     final response = await http.get(apiUrl);
 
     // ignore: invalid_use_of_protected_member
@@ -30,7 +31,7 @@ class MovieNetwork {
   }
 
   Future<List<Video>> movieVideos(int id) async {
-    final apiUrl = 'https://api.themoviedb.org/3/movie/$id/videos?api_key=$apiKey';
+    final apiUrl = 'https://api.themoviedb.org/3/movie/$id/videos?api_key=$movieApiKey';
     final response = await http.get(apiUrl);
 
     // ignore: invalid_use_of_protected_member
