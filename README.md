@@ -17,8 +17,10 @@ _______________
 
 * Firebase
 * Login Screen
+* Loading Screen
 * Grid and List views
 * Nested Scroll views
+* Pagination
 * TheMovie Db API
 * MVC architecture
 * Async tasks
