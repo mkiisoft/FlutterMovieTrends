@@ -40,7 +40,6 @@ android/app/yourkey.keystore
 ```
 
 # Features
-_______________
 
 * Firebase
 * Login Screen
