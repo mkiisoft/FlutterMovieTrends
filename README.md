@@ -17,13 +17,15 @@ class Keys {
 ```
 
 For Firebase, add your files under:
-
+```
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
+```
 
 For signing the APK you need to create a file under:
-
+```
 android/key.properties
+```
 
 with the following dat:
 ```
