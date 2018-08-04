@@ -34,7 +34,10 @@ storePassword="your store password"
 keyPassword="your key password"
 storeFile="path of you .keystore"
 ```
-Your keystore goes under "android/app/yourkey.keystore"
+Your keystore goes under 
+```
+android/app/yourkey.keystore
+```
 
 # Features
 _______________
