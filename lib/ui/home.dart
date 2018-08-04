@@ -24,7 +24,7 @@ class HomeState extends State<HomePage> {
   @override
   void initState() {
     _controller = new ScrollController()..addListener(_scrollListener);
-    
+
     _network = MovieNetwork(this);
     _network.fetchMovies(_currentPage, () {
       setState(() {
