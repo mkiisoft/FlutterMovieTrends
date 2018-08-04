@@ -1,3 +1,8 @@
+-ignorewarnings
+
+-keep class * {
+    public private *;
+}
 #Flutter Wrapper
 -keep class io.flutter.app.** { *; }
 -keep class io.flutter.plugin.**  { *; }
