@@ -22,7 +22,7 @@ class ProgressDialog extends StatelessWidget {
             opacity: 0.8,
             child: ModalBarrier(
               dismissible: false,
-              color: Color.fromRGBO(0, 0, 0, 1.0),
+              color: Colors.black,
             ),
           ),
           Center(
