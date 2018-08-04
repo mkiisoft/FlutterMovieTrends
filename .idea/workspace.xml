@@ -10,7 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c93d5bce-57fd-4f3a-9e4a-2d9d02ab4c42" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/utils/progress_dialog.dart" afterPath="$PROJECT_DIR$/lib/utils/progress_dialog.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/home.dart" afterPath="$PROJECT_DIR$/lib/ui/home.dart" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/login.dart" afterPath="$PROJECT_DIR$/lib/ui/login.dart" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.dart" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/ui/login.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="-141">
+              <caret line="305" column="21" lean-forward="false" selection-start-line="305" selection-start-column="21" selection-end-line="305" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -38,48 +39,8 @@
       <file leaf-file-name="home.dart" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/ui/home.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="network.dart" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/networking/network.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proguard-rules.pro" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/app/proguard-rules.pro">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="progress_dialog.dart" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/utils/progress_dialog.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            <state relative-caret-position="-102">
+              <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -154,17 +115,17 @@
         <option value="$PROJECT_DIR$/lib/app_main.dart" />
         <option value="$PROJECT_DIR$/lib/navigators/login_navigator.dart" />
         <option value="$PROJECT_DIR$/lib/adapters/cells/item_cell.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/login.dart" />
         <option value="$PROJECT_DIR$/lib/adapters/grid_adapter.dart" />
         <option value="$PROJECT_DIR$/lib/networking/network.dart" />
         <option value="$PROJECT_DIR$/lib/ui/detail.dart" />
         <option value="$PROJECT_DIR$/lib/utils/keys.dart" />
         <option value="$PROJECT_DIR$/android/app/google-services.json" />
-        <option value="$PROJECT_DIR$/lib/ui/home.dart" />
         <option value="$PROJECT_DIR$/android/key.properties" />
         <option value="$PROJECT_DIR$/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/android/app/proguard-rules.pro" />
         <option value="$PROJECT_DIR$/lib/utils/progress_dialog.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/home.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/login.dart" />
       </list>
     </option>
   </component>
@@ -434,8 +395,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/itemcell.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/detail.dart" />
     <entry file="file://$PROJECT_DIR$/lib/home.dart" />
     <entry file="file://$PROJECT_DIR$/lib/adapters/cells/video_cell.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -527,14 +486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="33" column="28" lean-forward="false" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/login.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -632,14 +583,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/networking/network.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/utils/keys.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -664,26 +607,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/home.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/utils/material_button.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/progress_dialog.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -696,10 +631,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/progress_dialog.dart">
+    <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="24" column="33" lean-forward="false" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        <state relative-caret-position="113">
+          <caret line="53" column="48" lean-forward="false" selection-start-line="53" selection-start-column="48" selection-end-line="53" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/networking/network.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/foundation/change_notifier.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="95" column="7" lean-forward="false" selection-start-line="95" selection-start-column="7" selection-end-line="95" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/flutter/packages/flutter/lib/src/widgets/scroll_controller.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="49" column="2" lean-forward="false" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/home.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/login.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-141">
+          <caret line="305" column="21" lean-forward="false" selection-start-line="305" selection-start-column="21" selection-end-line="305" selection-end-column="21" />
           <folding />
         </state>
       </provider>

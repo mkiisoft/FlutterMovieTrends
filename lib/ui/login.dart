@@ -138,7 +138,8 @@ class LoginState extends State<LoginPage> {
 
   @override
   void initState() {
-//    Utils.checkLoginState(context);
+    //TODO Uncomment if you want to persist the login state
+    //Utils.checkLoginState(context);
     super.initState();
   }
 
@@ -303,7 +304,6 @@ class LoginState extends State<LoginPage> {
 
   Widget getPasswordForm() {
     return Container(
-
       margin: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
       child: Material(
         color: Colors.transparent,

@@ -21,6 +21,20 @@ class HomeState extends State<HomePage> {
   // Async check
   bool _inAsync = true;
 
+  void _scrollListener() {
+    if (_controller.position.extentAfter <= 0.0 && !_inAsync) {
+      setState(() {
+        _inAsync = true;
+        _currentPage++;
+      });
+      _network.fetchMovies(_currentPage, () {
+        setState(() {
+          _inAsync = false;
+        });
+      });
+    }
+  }
+
   @override
   void initState() {
     _controller = new ScrollController()..addListener(_scrollListener);
@@ -38,20 +52,6 @@ class HomeState extends State<HomePage> {
   void dispose() {
     _controller.removeListener(_scrollListener);
     super.dispose();
-  }
-
-  void _scrollListener() {
-    if (_controller.position.extentAfter <= 0.0 && !_inAsync) {
-      setState(() {
-        _inAsync = true;
-        _currentPage++;
-      });
-      _network.fetchMovies(_currentPage, () {
-        setState(() {
-          _inAsync = false;
-        });
-      });
-    }
   }
 
   @override
