@@ -1,10 +1,10 @@
 [![Movie Trends](https://i.imgur.com/4buzRAQ.png)](https://github.com/mkiisoft/FlutterMovieTrends)
 
 # Movie Trends - Flutter [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/mkiisoft/FlutterMovieTrends) [![GitHub version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=1.0&x2=0)](https://github.com/mkiisoft/FlutterMovieTrends)
+
 Movie Trends it's an example using Flutter for Android and iOS.
 
 # Execute
-_______________
 
 For the TheMovie Db you need to create a file called "keys.dart" over "/lib/utils/" and add the following with your key: 
 
