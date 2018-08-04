@@ -48,7 +48,6 @@ android/app/yourkey.keystore
 * Nested Scroll views
 * Pagination
 * TheMovie Db API
-* MVC architecture
 * Async tasks
 * Custom Views
 * Utils / Date formats
