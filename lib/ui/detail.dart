@@ -41,33 +41,26 @@ class DetailState extends State<DetailPage> {
       );
     } else {
       return Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            color: Colors.black,
-            padding: EdgeInsets.only(
-              top: 15.0,
-              bottom: 5.0,
+            margin: EdgeInsets.only(
+              top: 20.0,
               left: 15.0,
             ),
-            child: SafeArea(
-              child: Text(
-                'Videos:',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.w700,
-                ),
+            child: Text(
+              'Videos:',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20.0,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),
           Container(
             height: 200.0,
-            margin: EdgeInsets.only(
-                left: 15.0,
-                right: 15.0,
-                bottom: 20.0
-            ),
+            margin: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 20.0),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: ListAdapter(
@@ -99,15 +92,17 @@ class DetailState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     DateTime time = parseDate(_movie);
+    bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    double marginTop = isPortrait ? 70.0 : 110.0;
 
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Material(
         child: Scaffold(
           backgroundColor: Colors.black,
           body: NestedScrollView(
             controller: _scrollController,
-            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
               return <Widget>[
                 SliverAppBar(
                   title: Text(_movie.title),
@@ -126,14 +121,12 @@ class DetailState extends State<DetailPage> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
                           Container(
-                            color: Colors.black,
-                            height: 200.0,
                             child: Opacity(
                               opacity: 0.6,
-                              child: Image.network(
+                              child: ArcBannerImage(
                                 "http://image.tmdb.org/t/p/w500${_movie
                                     .backdrop_path}",
-                                fit: BoxFit.cover,
+                                230.0,
                               ),
                             ),
                           ),
@@ -143,11 +136,10 @@ class DetailState extends State<DetailPage> {
                               children: <Widget>[
                                 Container(
                                   padding: EdgeInsets.only(
-                                    top: 70.0,
+                                    top: marginTop,
                                     left: 15.0,
                                     right: 15.0,
                                   ),
-                                  color: Colors.black,
                                   child: Text(
                                     _movie.title,
                                     style: TextStyle(
@@ -158,7 +150,6 @@ class DetailState extends State<DetailPage> {
                                   ),
                                 ),
                                 Container(
-                                  color: Colors.black,
                                   padding: EdgeInsets.only(
                                     top: 5.0,
                                     bottom: 20.0,
@@ -166,7 +157,8 @@ class DetailState extends State<DetailPage> {
                                     right: 15.0,
                                   ),
                                   child: Text(
-                                    'Release date: ${time.month}/${time.day}/${time
+                                    'Release date: ${time.month}/${time
+                                        .day}/${time
                                         .year}',
                                     style: TextStyle(
                                       color: Colors.white,
@@ -175,7 +167,6 @@ class DetailState extends State<DetailPage> {
                                   ),
                                 ),
                                 Container(
-                                  color: Colors.black,
                                   padding: EdgeInsets.symmetric(
                                     vertical: 5.0,
                                     horizontal: 15.0,
@@ -190,7 +181,6 @@ class DetailState extends State<DetailPage> {
                                   ),
                                 ),
                                 Container(
-                                  color: Colors.black,
                                   padding: EdgeInsets.symmetric(
                                     vertical: 10.0,
                                     horizontal: 15.0,
@@ -202,30 +192,66 @@ class DetailState extends State<DetailPage> {
                                       fontSize: 16.0,
                                     ),
                                   ),
-                                )
+                                ),
+                                videoContainer()
                               ], // (TITLE > RELEASE DATE > OVERVIEW) = DETAILS
                             ),
                           ),
-                          videoContainer()
                         ], // BACK POSTER > DETAILS > LIST VIEW
                       ),
                       SafeArea(
-                        child: Container(
-                          margin: EdgeInsets.only(
-                            top: 70.0,
-                            left: 15.0,
-                          ),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                            color: Colors.white,
-                            width: 4.0,
-                          )),
-                          width: 120.0,
-                          height: 180.0,
-                          child: Image.network(
-                            "http://image.tmdb.org/t/p/w500${_movie.poster_path}",
-                            fit: BoxFit.cover,
-                          ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.only(
+                                top: marginTop,
+                                left: 15.0,
+                              ),
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                color: Colors.white,
+                                width: 4.0,
+                              )),
+                              width: 120.0,
+                              height: 180.0,
+                              child: Image.network(
+                                "http://image.tmdb.org/t/p/w500${_movie
+                                    .poster_path}",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(
+                                top: marginTop,
+                                left: 15.0,
+                              ),
+                              height: 180.0,
+                              child: Align(
+                                alignment: Alignment.bottomLeft,
+                                child: Container(
+                                  height: 30.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.deepPurpleAccent,
+                                    borderRadius: BorderRadius.circular(
+                                      15.0,
+                                    ),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.0,
+                                    vertical: 8.0,
+                                  ),
+                                  child: Text(
+                                    "RATING: ${_movie.vote_average} / 10",
+                                    style: TextStyle(
+                                      fontSize: 12.0,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       )
                     ], // BACK DETAILS > THUMBNAIL POSTER

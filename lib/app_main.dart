@@ -56,6 +56,7 @@ part 'package:flutter_app/networking/network.dart';
 // - Utils
 part 'package:flutter_app/utils/utils.dart';
 part 'package:flutter_app/utils/keys.dart';
+part 'package:flutter_app/utils/arc_clipper.dart';
 part 'package:flutter_app/utils/material_button.dart';
 part 'package:flutter_app/utils/progress_dialog.dart';
 
