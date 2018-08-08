@@ -9,33 +9,31 @@ class ItemCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Image.network(
-              "http://image.tmdb.org/t/p/w342${_movie.poster_path}",
-              fit: BoxFit.cover,
-            ),
-          ],
+        Container(
+          child: Image.network(
+            "http://image.tmdb.org/t/p/w342${_movie.poster_path}",
+            fit: BoxFit.cover,
+          ),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              alignment: Alignment.bottomLeft,
-              padding: EdgeInsets.symmetric(
-                vertical: 12.0,
-                horizontal: 10.0,
-              ),
-              color: Colors.black54,
-              child: Text(
-                '${_movie.title}',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 20.0),
+            Center(
+              child: Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 10.0,
+                ),
+                color: Colors.black54,
+                child: Text(
+                  '${_movie.title}',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 20.0),
+                ),
               ),
             ),
           ],

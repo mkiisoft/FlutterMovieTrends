@@ -71,7 +71,7 @@ class MovieNetwork {
           movie['video'],
           movie['vote_average'].toDouble(),
           movie['title'],
-          movie['popularity'],
+          movie['popularity'].toDouble(),
           movie['poster_path'],
           movie['original_language'],
           movie['original_title'],
