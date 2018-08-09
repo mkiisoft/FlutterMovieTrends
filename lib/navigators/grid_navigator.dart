@@ -8,7 +8,7 @@ class GridNavigator {
   void _navigate(BuildContext context, Movie movie) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Detail(movie)),
+      MaterialPageRoute(builder: (context) => DetailPage(movie)),
     );
   }
 }

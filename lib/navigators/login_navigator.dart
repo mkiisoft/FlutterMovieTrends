@@ -6,10 +6,7 @@ class LoginNavigator {
   }
 
   void _navigate(BuildContext context) {
-    Navigator
-        .of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => HomePage(
-                  title: "Movie Trends",
-                )));
+    Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => HomePage("Movie Trends")));
   }
 }

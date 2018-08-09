@@ -7,7 +7,6 @@ class ItemCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(whiteTheme);
     return Stack(
       children: <Widget>[
         Column(

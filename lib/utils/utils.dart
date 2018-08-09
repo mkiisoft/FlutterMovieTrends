@@ -20,7 +20,6 @@ class Utils {
   }
 
   static ErrorCode getError(String exception) {
-    print(exception);
     if (exception.contains("17009") || exception.contains("password")) {
       return ErrorCode.PASSWORD;
     } else if (exception.contains("17011") || exception.contains("record")) {

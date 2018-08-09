@@ -1,14 +1,12 @@
 part of app_movie;
 
 class HomePage extends StatefulWidget {
-  final String title;
+  final String _title;
 
-  HomePage({Key key, this.title}) : super(key: key);
+  HomePage(this._title);
 
   @override
-  State<StatefulWidget> createState() {
-    return HomeState();
-  }
+  State<StatefulWidget> createState() => HomeState();
 }
 
 class HomeState extends State<HomePage> {
@@ -64,7 +62,7 @@ class HomeState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Movie Trends'),
+        title: Text(widget._title),
       ),
       backgroundColor: Colors.black,
       body: SafeArea(

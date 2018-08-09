@@ -1,41 +1,25 @@
 part of app_movie;
 
-class Detail extends StatelessWidget {
-  final Movie _movie;
-
-  Detail(this._movie);
-
-  @override
-  Widget build(BuildContext context) {
-    return DetailPage(_movie);
-  }
-}
-
 class DetailPage extends StatefulWidget {
   final Movie _movie;
 
   DetailPage(this._movie);
 
   @override
-  State<StatefulWidget> createState() {
-    return DetailState(_movie);
-  }
+  State<StatefulWidget> createState() => DetailState();
 }
 
 class DetailState extends State<DetailPage> {
-  final Movie _movie;
 
   ScrollController _scrollController;
   MovieNetwork _network;
-
-  DetailState(this._movie);
 
   @override
   void initState() {
     _scrollController = ScrollController();
 
     _network = MovieNetwork(this);
-    _network.movieVideos(_movie.id);
+    _network.movieVideos(widget._movie.id);
     super.initState();
   }
 
@@ -47,7 +31,7 @@ class DetailState extends State<DetailPage> {
 
   @override
   Widget build(BuildContext context) {
-    DateTime time = Utils.parse(_movie.release_date);
+    DateTime time = Utils.parse(widget._movie.release_date);
     bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     double marginTop = isPortrait ? 70.0 : 110.0;
@@ -61,7 +45,7 @@ class DetailState extends State<DetailPage> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                title: Text(_movie.title),
+                title: Text(widget._movie.title),
                 pinned: true,
               )
             ];
@@ -122,8 +106,8 @@ class DetailState extends State<DetailPage> {
       child: Opacity(
         opacity: 0.6,
         child: ArcBannerImage(
-          _movie.backdrop_path != null
-              ? "http://image.tmdb.org/t/p/w500${_movie
+          widget._movie.backdrop_path != null
+              ? "http://image.tmdb.org/t/p/w500${widget._movie
               .backdrop_path}"
               : null,
           230.0,
@@ -154,7 +138,7 @@ class DetailState extends State<DetailPage> {
       width: 120.0,
       height: 180.0,
       child: Image.network(
-        "http://image.tmdb.org/t/p/w500${_movie
+        "http://image.tmdb.org/t/p/w500${widget._movie
             .poster_path}",
         fit: BoxFit.cover,
       ),
@@ -183,7 +167,7 @@ class DetailState extends State<DetailPage> {
             vertical: 8.0,
           ),
           child: Text(
-            "RATING: ${_movie.vote_average} / 10",
+            "RATING: ${widget._movie.vote_average} / 10",
             style: TextStyle(
               fontSize: 12.0,
               fontWeight: FontWeight.bold,
@@ -203,7 +187,7 @@ class DetailState extends State<DetailPage> {
         right: 15.0,
       ),
       child: Text(
-        _movie.title,
+        widget._movie.title,
         style: TextStyle(
           color: Utils.textTheme(),
           fontSize: 25.0,
@@ -257,7 +241,7 @@ class DetailState extends State<DetailPage> {
         horizontal: 15.0,
       ),
       child: Text(
-        _movie.overview,
+        widget._movie.overview,
         style: TextStyle(
           color: Utils.textTheme(),
           fontSize: 16.0,

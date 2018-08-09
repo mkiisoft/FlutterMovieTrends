@@ -2,9 +2,7 @@ part of app_movie;
 
 class LoginPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return LoginState();
-  }
+  State<StatefulWidget> createState() => LoginState();
 }
 
 class LoginState extends State<LoginPage> {
