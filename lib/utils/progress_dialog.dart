@@ -26,7 +26,9 @@ class ProgressDialog extends StatelessWidget {
             ),
           ),
           Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation(Colors.yellowAccent),
+            ),
           )
         ],
       );

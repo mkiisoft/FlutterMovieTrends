@@ -202,7 +202,7 @@ class LoginState extends State<LoginPage> {
                 style: TextStyle(
                   fontFamily: 'Movie',
                   fontSize: 20.0,
-                  color: Colors.white,
+                  color: Utils.textTheme(),
                 ),
               ),
             ),
@@ -250,7 +250,7 @@ class LoginState extends State<LoginPage> {
               child: Text(
                 "ACCESS WITHOUT ACCOUNT",
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Utils.textTheme(),
                   fontSize: 12.0,
                 ),
               ),
@@ -284,7 +284,7 @@ class LoginState extends State<LoginPage> {
         color: Colors.transparent,
         child: TextFormField(
           style: TextStyle(
-            color: Colors.white,
+            color: Utils.textTheme(),
           ),
           validator: _validateEmail,
           onSaved: (value) => _email = value,
@@ -309,7 +309,7 @@ class LoginState extends State<LoginPage> {
         color: Colors.transparent,
         child: TextFormField(
           style: TextStyle(
-            color: Colors.white,
+            color: Utils.textTheme(),
           ),
           validator: _validatePassword,
           onSaved: (value) => _password = value,

@@ -23,7 +23,6 @@ import 'dart:convert';
 // Firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 // - Persistence
 import 'package:shared_preferences/shared_preferences.dart';
@@ -60,14 +59,17 @@ part 'package:flutter_app/utils/arc_clipper.dart';
 part 'package:flutter_app/utils/material_button.dart';
 part 'package:flutter_app/utils/progress_dialog.dart';
 
+var whiteTheme;
+
 class AppHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    whiteTheme = true;
     return MaterialApp(
       title: 'Movie Trends',
       home: LoginPage(),
       theme: ThemeData(
-        hintColor: Colors.white,
+        hintColor: Utils.textTheme(),
         primaryColor: Colors.black,
       ),
     );

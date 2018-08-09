@@ -24,7 +24,7 @@ class MaterialButton extends StatelessWidget {
                 child: Text(
                   text,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Utils.textTheme(),
                       fontSize: 15.0,
                       fontWeight: FontWeight.w700),
                 ),

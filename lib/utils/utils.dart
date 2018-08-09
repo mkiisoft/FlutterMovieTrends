@@ -2,6 +2,10 @@ part of app_movie;
 
 class Utils {
 
+  static Color textTheme() {
+    return whiteTheme ? Colors.white : Colors.black87;
+  }
+
   static DateTime parse(String formattedDate) {
     DateTime dateTime = DateTime.parse(formattedDate);
     return dateTime;

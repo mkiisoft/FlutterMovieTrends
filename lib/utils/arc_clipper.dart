@@ -2,6 +2,7 @@ part of app_movie;
 
 class ArcBannerImage extends StatelessWidget {
   ArcBannerImage(this.imageUrl, this.height);
+
   final String imageUrl;
   final double height;
 
@@ -11,18 +12,24 @@ class ArcBannerImage extends StatelessWidget {
 
     return ClipPath(
       clipper: ArcClipper(),
-      child: Image.network(
-        imageUrl,
-        width: screenWidth,
-        height: height,
-        fit: BoxFit.cover,
-      ),
+      child: imageUrl != null
+          ? Image.network(
+              imageUrl,
+              width: screenWidth,
+              height: height,
+              fit: BoxFit.cover,
+            )
+          : Image.asset(
+              "assets/no_poster.jpg",
+              width: screenWidth,
+              height: height,
+              fit: BoxFit.cover,
+            ),
     );
   }
 }
 
 class ArcClipper extends CustomClipper<Path> {
-
   @override
   Path getClip(Size size) {
     var path = Path();

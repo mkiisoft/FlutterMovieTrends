@@ -122,8 +122,10 @@ class DetailState extends State<DetailPage> {
       child: Opacity(
         opacity: 0.6,
         child: ArcBannerImage(
-          "http://image.tmdb.org/t/p/w500${_movie
-              .backdrop_path}",
+          _movie.backdrop_path != null
+              ? "http://image.tmdb.org/t/p/w500${_movie
+              .backdrop_path}"
+              : null,
           230.0,
         ),
       ),
@@ -139,7 +141,7 @@ class DetailState extends State<DetailPage> {
       decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black87,
+              color: Colors.black54,
               blurRadius: 25.0,
               offset: Offset(0.0, 4.0),
               spreadRadius: 5.0,
@@ -185,7 +187,7 @@ class DetailState extends State<DetailPage> {
             style: TextStyle(
               fontSize: 12.0,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Utils.textTheme(),
             ),
           ),
         ),
@@ -203,7 +205,7 @@ class DetailState extends State<DetailPage> {
       child: Text(
         _movie.title,
         style: TextStyle(
-          color: Colors.white,
+          color: Utils.textTheme(),
           fontSize: 25.0,
           fontWeight: FontWeight.w900,
         ),
@@ -224,7 +226,7 @@ class DetailState extends State<DetailPage> {
             .day}/${time
             .year}',
         style: TextStyle(
-          color: Colors.white,
+          color: Utils.textTheme(),
           fontSize: 14.0,
         ),
       ),
@@ -240,7 +242,7 @@ class DetailState extends State<DetailPage> {
       child: Text(
         'Overview:',
         style: TextStyle(
-          color: Colors.white,
+          color: Utils.textTheme(),
           fontSize: 20.0,
           fontWeight: FontWeight.w700,
         ),
@@ -257,7 +259,7 @@ class DetailState extends State<DetailPage> {
       child: Text(
         _movie.overview,
         style: TextStyle(
-          color: Colors.white,
+          color: Utils.textTheme(),
           fontSize: 16.0,
         ),
       ),
@@ -287,7 +289,7 @@ class DetailState extends State<DetailPage> {
       child: Text(
         'Videos:',
         style: TextStyle(
-          color: Colors.white,
+          color: Utils.textTheme(),
           fontSize: 20.0,
           fontWeight: FontWeight.w700,
         ),

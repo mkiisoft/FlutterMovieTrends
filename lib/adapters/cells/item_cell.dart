@@ -7,6 +7,7 @@ class ItemCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(whiteTheme);
     return Stack(
       children: <Widget>[
         Column(
@@ -31,11 +32,11 @@ class ItemCell extends StatelessWidget {
                   vertical: 12.0,
                   horizontal: 10.0,
                 ),
-                color: Colors.black54,
+                color: whiteTheme ? Colors.black54 : Colors.white70,
                 child: Text(
                   '${_movie.title}',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Utils.textTheme(),
                       fontWeight: FontWeight.w900,
                       fontSize: 20.0),
                 ),
