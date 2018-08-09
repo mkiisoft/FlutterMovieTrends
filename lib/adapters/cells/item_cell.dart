@@ -9,11 +9,16 @@ class ItemCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-        Container(
-          child: Image.network(
-            "http://image.tmdb.org/t/p/w342${_movie.poster_path}",
-            fit: BoxFit.cover,
-          ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              child: Image.network(
+                "http://image.tmdb.org/t/p/w342${_movie.poster_path}",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,

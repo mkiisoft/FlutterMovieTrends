@@ -28,7 +28,6 @@ class VideoCell extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   vertical: 15.0,
                 ),
-                color: Colors.black54,
                 child: Text(
                   '${_video.name}',
                   overflow: TextOverflow.ellipsis,
