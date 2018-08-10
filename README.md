@@ -15,6 +15,7 @@ class Keys {
   static final apiKey = 'YOUR API KEY';
 }
 ```
+To generate a new key you must create an account over [TheMovieDb](https://www.themoviedb.org/faq/api) and clicking the "API" link from the left hand sidebar within your account settings.
 
 For Firebase, add your files under:
 ```
